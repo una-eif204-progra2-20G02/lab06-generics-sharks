@@ -9,28 +9,29 @@
 #include "Professor.h"
 #include "Administrative.h"
 
+template <typename T>
 class University {
   public:
     University();
     University(string);
-    University(string,Professor*,Administrative*);
+    //University(string,Professor*,Administrative*);
     string getName();
     void setName(string);
-    Professor* getProfessor();
-    void setProfessor(Professor *professor);
-    Administrative* getAdministrative();
-    void setAdministrative(Administrative *administrative);
-    void addProfessor(Professor *professor);
+    T getProfessor();
+    void setElement(Professor *professor);
+    T getAdministrative();
+    void setAdministrative(T administrative);
+    void addProfessor(T professor);
     string getListProfessor();
-    void addAdministrative(Administrative *administrative);
+    void addAdministrative(T administrative);
     string getListAdministrative();
 
   private:
     string name;
     Professor* professor;
     Administrative* administrative;
-    vector<Professor*> professorList;
-    vector<Administrative*> administrativeList;
+    vector<T> professorList;
+    vector<T> administrativeList;
 };
 
 
