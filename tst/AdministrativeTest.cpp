@@ -5,6 +5,7 @@
 #include <Administrative.h>
 #include "gtest/gtest.h"
 
+/*Test que prueba si el toString de la clase Administrative funciona correctamente*/
 
 TEST(AdministrativeTestSuite, ChecktoString){
     Administrative administrative;
@@ -13,5 +14,6 @@ TEST(AdministrativeTestSuite, ChecktoString){
     administrative.setDocumentId(502580654);
     administrative.setMonthlySalary(1975219.00);
 
-    EXPECT_EQ(administrative.toString(),"");
+    EXPECT_EQ(administrative.toString(),"Administrative Information: Cristian Artavia\n"
+                                        "Doc Id: 502580654, Monthly Salary: 1975219.00");
 }

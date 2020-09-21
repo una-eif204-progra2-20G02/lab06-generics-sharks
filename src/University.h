@@ -6,8 +6,9 @@
 #define GENERICS_SHARKS_UNIVERSITY_H
 
 #include <vector>
-#include "Professor.h"
-#include "Administrative.h"
+#include <cassert>
+#include <gtest/gtest.h>
+#include "Person.h"
 
 template <typename T>
 class University {
@@ -18,11 +19,11 @@ class University {
 
     void setName(string name);
 
-    void addAdministrative(T elem);
+    testing::AssertionResult addElement(T elem);
 
-    void eraseElem();
+    testing::AssertionResult eraseElem();
 
-    void top();
+    testing::AssertionResult top();
 
     T getList();
 
@@ -49,18 +50,18 @@ void University<T>::setName(string name) {
 }
 
 template<typename T>
-void University<T>::addAdministrative(T elem) {
+testing::AssertionResult University<T>::addElement(T elem) {
     list.push_back(elem);
 }
 
 template<typename T>
-void University<T>::eraseElem() {
+testing::AssertionResult University<T>::eraseElem() {
     assert(!list.empty());
     list.pop_back();
 }
 
 template<typename T>
-void University<T>::top() {
+testing::AssertionResult University<T>::top() {
     assert(!list.empty());
     list.back();
 }
