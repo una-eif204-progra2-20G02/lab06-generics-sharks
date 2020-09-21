@@ -42,13 +42,13 @@ void Professor::setcommissionRate(double commissionRate){
 
 double Professor::salary(){
   double netSalary;
-  netSalary=monthlySalary+monthlySalary*commissionRate;
+  netSalary=getmonthlySalary()+(getmonthlySalary()*getcommissionRate());
   return netSalary;
 }
 
 string Professor::toString() {
-  stringstream s;
-  s<<"Professor Information: "<<firstName<<" "<<lastName<<endl;
-  s<<"Doc Id: "<<documentId<<","<<" Monthly Salary: "<< setprecision(2) << fixed <<salary()<<endl;
-  return s.str();
+  stringstream professor;
+  professor<<"Professor Information: "<<getfirstName()<<" "<<getlastName()<<endl;
+  professor<<"Doc Id: "<<getdocumentID()<<", Monthly Salary: "<< setprecision(2) << fixed <<salary();
+  return professor.str();
 }

@@ -27,12 +27,12 @@ double Administrative::getMonthlySalary(){
 }
 
 double Administrative::salary(){
-  return monthlySalary;
+  return getMonthlySalary();
 }
 
 string Administrative::toString() {
-  stringstream t;
-  t<<"Administrative Information: "<<firstName<<" "<<lastName<<endl;
-  t<<"Doc Id: "<<documentId<<","<<" Monthly Salary: "<< setprecision(2) << fixed <<salary()<<endl;
-  return t.str();
+  stringstream administrative;
+  administrative<<"Administrative Information: "<<getfirstName()<<" "<<getlastName()<<endl;
+  administrative<<"Doc Id: "<<getdocumentID()<<","<<" Monthly Salary: "<< setprecision(2) << fixed <<salary();
+  return administrative.str();
 } 

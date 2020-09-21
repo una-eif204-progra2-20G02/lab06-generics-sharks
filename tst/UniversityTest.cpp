@@ -8,8 +8,7 @@
 #include <Person.h>
 #include "gtest/gtest.h"
 
-/*Unit test que verifica si add top o erase de un objeto tipo Professor
- * en el vector de la clase University funciona correctamente*/
+/*Unit test que verifica si add top o erase de un objeto tipo Professor en el vector de la clase University funciona correctamente*/
 
 TEST(UniversityTestSuite, professorList) {
     University<Person*> university;

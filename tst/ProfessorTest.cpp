@@ -11,7 +11,7 @@ TEST(ProfessorTestSuite, ChecktoStringandSalary){
     Professor professor;
     professor.setFirstName("Pedro");
     professor.setLastName("Sanchez");
-    professor.setDocumentId(1286608618);(
+    professor.setDocumentId(1286608618);
     professor.setmonthlySalary(1000000.00);
     professor.setcommissionRate(0.05);
 

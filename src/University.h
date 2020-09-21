@@ -46,7 +46,7 @@ University<T>::University() {
 
 template<typename T>
 void University<T>::setName(string name) {
-    name = name;
+    this->name = name;
 }
 
 template<typename T>
@@ -74,7 +74,7 @@ T University<T>::getList() {
 template<typename T>
 string University<T>::toString() {
     stringstream name;
-    name<<"Name: "<<getName()<<endl;
+    name<<"Name: "<<getName();
     return name.str();
 }
 
