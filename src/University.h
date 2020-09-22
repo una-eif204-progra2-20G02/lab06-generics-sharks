@@ -19,15 +19,15 @@ class University {
 
     void setName(string name);
 
-    testing::AssertionResult addElement(T elem);
+    void addElement(T const& elem);
 
-    testing::AssertionResult eraseElem();
+    void eraseElem();
 
-    testing::AssertionResult top();
-
-    T getList();
+    T const& top();
 
     string toString();
+
+    int size();
 
   private:
     string name;
@@ -50,32 +50,33 @@ void University<T>::setName(string name) {
 }
 
 template<typename T>
-testing::AssertionResult University<T>::addElement(T elem) {
+void University<T>::addElement(T const& elem) {
     list.push_back(elem);
 }
 
 template<typename T>
-testing::AssertionResult University<T>::eraseElem() {
+void University<T>::eraseElem() {
     assert(!list.empty());
     list.pop_back();
 }
 
 template<typename T>
-testing::AssertionResult University<T>::top() {
+T const& University<T>::top() {
     assert(!list.empty());
-    list.back();
+    return list.back();
 }
 
-template<typename T>
-T University<T>::getList() {
-    return list;
-}
 
 template<typename T>
 string University<T>::toString() {
     stringstream name;
     name<<"Name: "<<getName();
     return name.str();
+}
+
+template<typename T>
+int University<T>::size() {
+    return list.size();
 }
 
 

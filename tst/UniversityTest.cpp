@@ -16,10 +16,11 @@ TEST(UniversityTestSuite, professorList) {
     university.setName("Universidad Nacional");
 
     EXPECT_EQ(university.toString(),"Name: Universidad Nacional");
-    //EXPECT_EQ(university.getList(),"");
-    EXPECT_TRUE(university.addElement(professor));
-    EXPECT_TRUE(university.top());
-    EXPECT_TRUE(university.eraseElem());
+    university.addElement(professor);
+    EXPECT_EQ(university.size(),1);
+    university.eraseElem();
+    EXPECT_EQ(university.size(),0);
+
 }
 
 /*Unit test que verifica si add top o erase de un objeto tipo Administrative
@@ -27,12 +28,12 @@ TEST(UniversityTestSuite, professorList) {
 
 TEST(UniversityTestSuite, administrativeList) {
     University<Person*> university;
-    Person* administrative = new Administrative("Mike","Guzman",1234567890,1500000.00);
+    Person* administrative = new Administrative("Jesus","Garcia",706780156,1406400.00);
     university.setName("Universidad Nacional");
 
     EXPECT_EQ(university.toString(),"Name: Universidad Nacional");
-    //EXPECT_EQ(university.getList(),"");
-    EXPECT_TRUE(university.addElement(administrative));
-    EXPECT_TRUE(university.top());
-    EXPECT_TRUE(university.eraseElem());
+    university.addElement(administrative);
+    EXPECT_EQ(university.size(),1);
+    university.eraseElem();
+    EXPECT_EQ(university.size(),0);
 }
